@@ -1,3 +1,10 @@
+@import url('animations.css');
+
+@font-face {
+  font-family: batman;
+  src: url('../fonts/batmfo__.ttf');
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -8,11 +15,6 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   overflow-x: hidden;
-}
-
-@font-face {
-  font-family: batman;
-  src: url('../fonts/batmfo__.ttf');
 }
 
 .clearfix {
@@ -54,6 +56,7 @@ body {
   text-decoration: none;
   padding: 20px;
   color: rgba(0,0,0,0.92);
+  transition: all 300ms ease-in;
 }
 
 .navbar .navbar-list .navbar-list-item a:hover {
@@ -70,11 +73,22 @@ body {
   font-family: batman;
   text-align: center;
   font-size: 100px;
+  visibility: hidden;
+  -webkit-animation: titleAnimation 1s forwards 0.8s;
+  animation: titleAnimation 1s forwards 0.8s;
 }
 
 .header-img {
   width: 100%;
   height: 100vh;
+  background-image: url('../images/batman.jpg');
+  background-size: 100% 100%;
+  background-position: center;
+  transition: all 300ms ease-in;
+}
+
+.header-img:hover {
+  background-size: 115% 115%;
 }
 
 .header-cite {
@@ -86,6 +100,9 @@ body {
   text-align: center;
   font-family: batman;
   font-size: 20px;
+  opacity: 0;
+  -webkit-animation: subtitleAnimation 3s forwards 1s;
+  animation: subtitleAnimation 3s forwards 1s;
 }
 
 .about-me .batman-photo {
@@ -96,6 +113,13 @@ body {
 .about-me .batman-info {
   max-width: 50%;
   float: right;
+}
+
+.team-member-photo img {
+  max-width: 100%;
+  height: 300px;
+  border-radius: 50%;
+  border: 6px solid rgba(0,0,0,0.2);
 }
 
 .section-content-reverse {
@@ -130,6 +154,37 @@ body {
 
 .transporte-info {
   align-self: flex-end;
+}
+
+.flip {
+  position: relative;
+  height: 305px;
+}
+
+.flip-img {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: transform 400ms ease-in;
+}
+
+.flip:hover .front {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.flip:hover .back {
+  -webkit-transform: rotateY(0);
+  -moz-transform: rotateY(0);
+  transform: rotateY(0);
+}
+
+.back {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
 
 .footer {
