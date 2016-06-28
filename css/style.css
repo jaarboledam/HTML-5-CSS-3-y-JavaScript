@@ -41,6 +41,11 @@ body {
   z-index: 999;
 }
 
+.navbar-reverse {
+  background-color: rgba(0, 0, 0, 0.92)!important;
+  color: #f7f7f7;
+}
+
 .navbar .navbar-list {
   list-style-type: none;
   margin: 0;
@@ -51,12 +56,21 @@ body {
   display: inline-block;
 }
 
+.navbar .navbar-list .navbar-list-item.active {
+  color: #F7F7F7;
+  background-color: #A4A4A4;
+}
+
 .navbar .navbar-list .navbar-list-item a {
   display: inline-block;
   text-decoration: none;
   padding: 20px;
   color: rgba(0,0,0,0.92);
   transition: all 300ms ease-in;
+}
+
+.navbar-reverse .navbar-list .navbar-list-item a {
+  color: #F7F7F7;
 }
 
 .navbar .navbar-list .navbar-list-item a:hover {
@@ -83,7 +97,7 @@ body {
   height: 100vh;
   background-image: url('../images/batman.jpg');
   background-size: 100% 100%;
-  background-position: center;
+  background-position: center center;
   transition: all 300ms ease-in;
 }
 
